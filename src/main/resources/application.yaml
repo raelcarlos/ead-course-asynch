@@ -9,7 +9,7 @@ spring:
   datasource:
     url:  jdbc:postgresql://localhost:5432/ead-course-v2
     username: postgres
-    password: banco123
+    password: postgres
   jpa:
     hibernate:
       ddl-auto: update
@@ -22,6 +22,8 @@ spring:
   output:
     ansi:
       enabled: Always
+  rabbitmq:
+    addresses: amqps://cijluuxh:T8Cf2gt3QpTu6eAkTMNo3-3wf18AlOI9@moose.rmq.cloudamqp.com/cijluuxh
 
 
 logging:
@@ -35,6 +37,12 @@ ead:
   api:
     url:
       authuser: 'http://ead-authuser-service/ead-authuser'
+  broker:
+    exchange:
+      userEventExchange: ead.userevent
+    queue:
+      userEventQueue:
+        name: ead.userevent.ms.course
 
 eureka:
   client:
