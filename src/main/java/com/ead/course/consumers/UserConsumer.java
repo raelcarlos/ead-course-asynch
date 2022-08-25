@@ -13,8 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
 
-import static com.ead.course.enums.ActionType.CREATE;
-
 @Component
 public class UserConsumer {
 
